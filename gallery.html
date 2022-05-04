@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <meta name="description" content="dizzytoad music page">
+    <meta charset="utf-8">
+    <title>art gallery</title>
+  </head>
+  <body>
+    <div class="pagetop">
+
+    <div class="title">
+      <img style='max-width: 100%' id="gallerytitle" src="image/gallery.png" alt="title reading gallery">
+    </div>
+    <div id="sidepanel" class="sidepanel">
+    <a href="javascript:void(0)" class="closebtn" aria-label="button to close menu sidepanel" onclick="closeNav()">x</a> <!-- button for when the sidepanel is open to close it -->
+    <a href="homepage.html"><strong>home</strong></a>
+    <a href="music.html"><strong>music</strong></a>
+    <a href="gallery.html"><strong>gallery</strong></a>
+    <a href="wardrobe.html"><strong>wardrobe</strong></a>
+    <a href="contact.html"><strong>contact me</strong></a>
+    </div>
+    <!-- aria-label has been used a lot throughout the code for accessability purposes-->
+    <img id="menubutton" src="image/menu.png" aria-label="button to open menu sidepanel" onclick="openNav()" width="20px" height="20px" alt="menu button"><!-- image acting as button to open the side panel -->
+    </div>
+    <div id="popup" class="popuphidden">
+        <div class="inside">
+          <button id="popupbutton" onclick="hidepopup()" class="closeBtn">X</button> <!-- this is to add a button to the pop up that will allow to user to close it-->
+          <h2 id="artname"><strong>SELF PORTRAITS #1</strong></h2>
+          <div class="row">
+          <button id="popupbutton" onclick="previous1()"><</button>
+          <img id="artimage" src="image/selfportraits1.png" width="200px" alt="self portrait drawings">
+          <button id="popupbutton" onclick="next1()">></button>
+        </div>
+          <p id="aboutart">
+            these self portraits (one that you may recognise from the homepage) were drawn digitally. They are the most recent self portrait i have done.
+          </p>
+        </div>
+      </div>
+      <div id="popup2" class="popuphidden">
+          <div class="inside">
+            <button id="popupbutton" onclick="hidepopup2()" class="closeBtn">X</button> <!-- this is to add a button to the pop up that will allow to user to close it-->
+            <h2 id="artname"><strong>SELF PORTRAITS #2</strong></h2>
+            <div class="row">
+            <button id="popupbutton" onclick="previous2()"><</button>
+            <img id="artimage" src="image/selfportraits2.png" width="200px" alt="self portrait drawings">
+            <button id="popupbutton" onclick="next2()">></button>
+          </div>
+            <p id="aboutart">
+              these self portraits i really like, as they really helped me to develop my recent art style. I'm a big fan of cartoons if you cant tell :).
+            </p>
+          </div>
+        </div>
+  <div id="popup3" class="popuphidden">
+    <div class="inside">
+    <button id="popupbutton" onclick="hidepopup3()" class="closeBtn">X</button> <!-- this is to add a button to the pop up that will allow to user to close it-->
+    <h2 id="artname"><strong>EYES, IN BIRO</strong></h2>
+    <div class="row">
+    <button id="popupbutton" onclick="previous3()"><</button>
+    <img id="artimage" src="image/eyesart.png" width="200px" alt="biro drawing of eyes">
+    <button id="popupbutton" onclick="next3()">></button>
+    </div>
+    <p id="aboutart">
+since i finished my a-levels in 2020, I havent really done much traditional realism. this drawing is the first i have done in this style and medium for a long time. i think i'm a little rusty.  ALSO !! THE PASSWORD IS 13579 !!  </p>
+    </div>
+    </div>
+  <div id="popup4" class="popuphidden">
+  <div class="inside">
+      <button id="popupbutton" onclick="hidepopup4()" class="closeBtn">X</button> <!-- this is to add a button to the pop up that will allow to user to close it-->
+        <h2 id="artname"><strong>GIRAFFE</strong></h2>
+        <div class="row">
+        <button id="popupbutton" onclick="previous4()"><</button>
+          <img id="artimage" src="image/neck.png" width="200px" alt="drawing of girl with long neck">
+          <button id="popupbutton" onclick="next4()">></button>
+        </div>
+          <p id="aboutart">
+inspired by a song by miniature tigers, called giraffe. "thats what you get for sticking out your neck" "it's just another sunny day where I'm at, my head is in the clouds 'cause I'm stretching out my neck"           </p>
+          </div>
+        </div>
+        <div id="popup5" class="popuphidden">
+          <div class="inside">
+          <button id="popupbutton" onclick="hidepopup5()" class="closeBtn">X</button> <!-- this is to add a button to the pop up that will allow to user to close it-->
+          <h2 id="artname"><strong>FUGGLERS</strong></h2>
+          <div class="row">
+          <button id="popupbutton" onclick="previous5()"><</button>
+          <img id="artimage" src="image/fugglers.png" width="200px" alt="drawings of fuggler dolls">
+          <button id="popupbutton" onclick="next5()">></button>
+          </div>
+          <p id="aboutart">
+these drawings are of two of my favourite fuggler dolls (funny ugly monsters), which are something that i collect. I just love how creepy they are with their realistic eyes and teeth, and fabric everything else. i currently have 7.   </p>
+          </div>
+          </div>
+          <div id="popup6" class="popuphidden">
+            <div class="inside">
+            <button id="popupbutton" onclick="hidepopup6()" class="closeBtn">X</button> <!-- this is to add a button to the pop up that will allow to user to close it-->
+            <h2 id="artname"><strong>2020 SELF PORTRAIT</strong></h2>
+            <div class="row">
+            <button id="popupbutton" onclick="previous6()"><</button>
+            <img id="artimage" src="image/2020portrait.png" width="200px" alt="past self portrait drawing">
+            <button id="popupbutton" onclick="next6()">></button>
+            </div>
+            <p id="aboutart">
+this is the oldest piece on this page. i thought it would be nice to include and older self portrait, as well as the recnt ones, to show how my art style has developed. my personality used to be a bit different.            </p>
+            </div>
+            </div>
+            <div id="popup7" class="popuphidden">
+              <div class="inside">
+              <button id="popupbutton" onclick="hidepopup7()" class="closeBtn">X</button> <!-- this is to add a button to the pop up that will allow to user to close it-->
+              <h2 id="artname"><strong>ME & MY FRIENDS</strong></h2>
+              <div class="row">
+              <button id="popupbutton" onclick="previous7()"><</button>
+              <img id="artimage" src="image/friends.png" width="200px" alt="drawing of 4 girls">
+              <button id="popupbutton" onclick="next7()">></button>
+              </div>
+              <p id="aboutart">
+this is a drawing of me and my best friends and housemates. pictured from left to right: emily, izzy, me, and honey. its from when we first became friends before uni started, so we all look a bit different now.              </p>
+              </div>
+              </div>
+
+
+
+
+
+<div class="framerow">
+<div class="framecolumn">
+  <img style='max-width: 100%' width="200px" src="image/frame1.png" onclick="artpopup()" alt="image of a drawing in a frame">
+  <img style='max-width: 100%' width="200px" src="image/frame6.png"  onclick="artpopup3()" alt="image of a drawing in a frame">
+<div class="aboutgallery">
+  <p>my favourite hobby is art, specifically illustration and animation. Here are some of my favourite pieces from recent years. click each frame to learn more about them!</p>
+</div>
+<img style='max-width: 100%' width="200px" src="image/frame5.png" onclick="artpopup6()" alt="image of a drawing in a frame">
+</div>
+
+  <div class="framecolumn">
+  <img style='max-width: 100%' width="200px" src="image/frame2.png" onclick="artpopup2()" alt="image of a drawing in a frame">
+<img style='max-width: 100%' width="200px" src="image/frame3.png" onclick="artpopup4()" alt="image of a drawing in a frame">
+    <img style='max-width: 100%' width="200px" src="image/frame4.png" onclick="artpopup5()"alt="image of a drawing in a frame">
+    <img style='max-width: 100%' width="200px" src="image/frame7.png" onclick="artpopup7()"alt="image of a drawing in a frame">
+
+  </div>
+  </div>
+
+<footer><p>P2584421</p></footer>
+    <script type="text/javascript">
+
+    function openNav() {
+  document.getElementById("sidepanel").style.width = "250px";
+}
+// this function above is the one that runs when the menu button is pressed, it will increase the width of the sidepanel from 0 to 250px to make it seem as if the panel is opening //
+function closeNav() {
+  document.getElementById("sidepanel").style.width = "0";
+}
+//these following functions are to display the popup for each corresponding framed image when the image is pressed. it does this by changing the class //
+function artpopup() {
+        var popup = document.getElementById("popup");
+        popup.setAttribute("class","popupshown");
+      };
+      function hidepopup() {
+        var popup = document.getElementById("popup");
+        popup.setAttribute("class","popuphidden");
+    };
+    function artpopup2() {
+            var popup2 = document.getElementById("popup2");
+            popup2.setAttribute("class","popupshown");
+          };
+          function hidepopup2() {
+            var popup2 = document.getElementById("popup2");
+            popup2.setAttribute("class","popuphidden");
+        };
+  function artpopup3() {
+      var popup3 = document.getElementById("popup3");
+        popup3.setAttribute("class","popupshown");
+      };
+      function hidepopup3() {
+        var popup3 = document.getElementById("popup3");
+        popup3.setAttribute("class","popuphidden");
+            };
+function artpopup4() {
+    var popup4 = document.getElementById("popup4");
+        popup4.setAttribute("class","popupshown");
+        };
+      function hidepopup4() {
+      var popup4 = document.getElementById("popup4");
+        popup4.setAttribute("class","popuphidden");
+                      };
+
+  function artpopup5() {
+    var popup5 = document.getElementById("popup5");
+    popup5.setAttribute("class","popupshown");
+        };
+    function hidepopup5() {
+      var popup5 = document.getElementById("popup5");
+      popup5.setAttribute("class","popuphidden");
+    };
+    function artpopup6() {
+        var popup6 = document.getElementById("popup6");
+            popup6.setAttribute("class","popupshown");
+            };
+          function hidepopup6() {
+          var popup6 = document.getElementById("popup6");
+            popup6.setAttribute("class","popuphidden");
+    };
+    function artpopup7() {
+        var popup7 = document.getElementById("popup7");
+            popup7.setAttribute("class","popupshown");
+            };
+          function hidepopup7() {
+          var popup7 = document.getElementById("popup7");
+            popup7.setAttribute("class","popuphidden");
+                          };
+//these following functions are for when the previous and next arrows are pressed on each popup. they simply run the functions to close the current popup and open the next one //
+function previous1() {
+  artpopup7();
+  hidepopup();
+}
+function next1() {
+  artpopup2();
+  hidepopup();
+}
+function previous2() {
+  artpopup();
+  hidepopup2();
+}
+function next2() {
+  artpopup3();
+  hidepopup2();
+}
+function previous3() {
+  artpopup2();
+  hidepopup3();
+}
+function next3() {
+  artpopup4();
+  hidepopup3();
+}
+function previous4() {
+  artpopup3();
+  hidepopup4();
+}
+function next4() {
+  artpopup5();
+  hidepopup4();
+}
+function previous5() {
+  artpopup4();
+  hidepopup5();
+}
+function next5() {
+  artpopup6();
+  hidepopup5();
+}
+function previous6() {
+  artpopup5();
+  hidepopup6();
+}
+function next6() {
+  artpopup7();
+  hidepopup6();
+}
+function previous7() {
+  artpopup6();
+  hidepopup7();
+}
+function next7() {
+  artpopup();
+  hidepopup7();
+}
+    </script>
+  </body>
+</html>

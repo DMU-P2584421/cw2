@@ -1,0 +1,720 @@
+
+body {
+   background-image: linear-gradient(45deg, #051545, #00FF2F); /*sets the background as a gradient*/
+   font-family: determination; /*sets the font family to the supplied font*/
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+    margin: 0;
+    height: 0; /*added to combat an issue i was having where the body was preventing one of the buttons on the wardrobe page from being pressed properly, as it was covering up half of the button */
+}
+.title {
+  margin: 5px;
+}
+.linkword {
+  text-decoration: none; /*removes the underline from the anchor element*/
+  font-size: 30px;
+  color: #051545;
+  text-shadow: 1px 1px #00FF2F;
+}
+a:visited {
+  color: #051545;
+  text-shadow: 2px 1px #0066ff;
+}
+.pagelinks {
+  width: 90%;
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-bottom: 10px;
+}
+
+.linkscolumn {
+  display: flex; /*sets the display to flex to allow for structuring the elements*/
+  flex-direction: column;
+}
+.linksrow {
+  display: flex;
+  flex-direction: row;
+
+}
+.linksinnercolumn {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+#wardrobelink {
+  background-image: url("../image/wardrobebg.GIF");
+  background-position: center;
+  background-size: cover;
+  background-color: #0066ff;
+  padding-top: 65px;
+  padding-bottom: 65px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 12px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  width: 45%;
+}
+#musiclink {
+  background-image: url("../image/musicbg.GIF");
+  background-position: center;
+  background-size: cover;
+  background-color: #0066ff;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 35px;
+  padding-right: 35px;
+  border-radius: 12px;
+  margin-left: 8px;
+  margin-bottom: 8px;
+}
+#contactlink {
+  background-image: url("../image/contactbg.GIF");
+  background-position: center;
+  background-size: cover;
+  background-color: #0066ff;
+  padding-top: 12px;
+  padding-bottom: 13px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 12px;
+  margin-left: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+#gallerylink {
+  background-color: #0066ff;
+  background-image: url("../image/gallerybg.GIF");
+  background-position: center;
+  background-size: cover;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-right: 2px;
+  border-radius: 12px;
+  text-align: center;
+  margin-top: 8px;
+  width: 100%;
+}
+
+#wdywtg {
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: center;
+  color: #00FF2F;
+  text-shadow: 1px 1px #051545;
+}
+
+.aboutrow {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+@media (min-width: 800px) { /*used to change the flex direction of certain groups of elements to adapt them better to desktop */
+  .aboutrow {
+    flex-direction: column-reverse;
+  }
+}
+@media (min-width: 800px) {
+  .homedesktoprow {
+    display: flex;
+    flex-direction: row;
+  }
+}
+@media (min-width: 800px) {
+  .musicdesktopadapt {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 800px) {
+  .framecolumn {
+    flex-grow: 1; /*set so that when the gallery page is in desktop, the columns are spread further out rather than being on one side of the page. */
+  }
+}
+@media (min-width: 800px) {
+  .framerow {
+    flex-grow: 1;
+  }
+}
+.contactrow {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+.contactform {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+.contactformhidden {
+  display: none;
+}
+.forminput {
+  width: 90%;
+  margin: auto;
+  background-color: #00FF2F;
+  font-family: inherit;
+}
+#submitbutton {
+  color: #00FF2F;
+  background-color: #051545;
+  font-family: inherit;
+}
+#contactbutton {
+  margin: 4px;
+  background-color: rgba(5, 21, 69, 0.8); /* using rgba as opposed to just including the hex code allows the opacity of the background colour to be changed. this differs to using the opacity style, as that changes the opacity of the whole thing including the text and border, etc. */
+  border-radius: 20px;
+  border: 2px solid #00FF2F;
+  width: 45%;
+}
+.formtext {
+  text-align: center;
+  color: #051545;
+  text-shadow: 1px 1px #0066ff;
+}
+
+#musicbody {
+background-image: url("../image/backgroundmusic.png"), linear-gradient(#051545, #00FF2F); /*adding two images in the background image (an actual image and a generated gradient)*/
+background-position: center;
+background-repeat: no-repeat;
+
+}
+#popupbutton {
+  float: right;
+  background-color: #0066ff;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  font-family: inherit; /*inherits the font from the parent element, for some reason needs to be added for every button */
+}
+.popup .inside {
+  padding: 2%;
+}
+.popupshown {
+  width: 70%;
+   background-color: rgba(0, 255, 47, 0.9);
+   border-radius: 25px;
+   border: 2px #051545 solid;
+   color: #0066ff;
+   font-family: inherit;
+   position: fixed;
+   top: 0;
+   padding: 2%;
+   text-align: center;
+   font-size: 12px;
+   top: 25%;
+   left: 12%;
+}
+.popuphidden {
+  display: none;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin: auto;
+}
+@font-face {
+	font-family: "determination";
+	src: url('../fonts/determination.ttf');
+} /* this add the provided font family to the style sheet, allowing it to be used in the website*/
+
+.framerow {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin: auto;
+}
+.framecolumn {
+  display: flex;
+  flex-direction: column;
+
+}
+
+#gallerytitle {
+  padding-right: 10px;
+}
+h5 {
+  color: #051545;
+  text-align: center;
+  width: 70%;
+  margin: auto;
+}
+.sidepanel {
+  height: 250px;
+  width: 0;
+  position: fixed;
+  z-index: 99; /*added a high z index number to ensure the side panel appears in front of all other elements*/
+  top: 0;
+  left: 0;
+  background-color: #051545;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+  border-bottom-right-radius: 12px;
+}
+.sidepanel a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #0066ff;
+  display: block;
+  transition: 0.3s;
+  font-family: inherit;
+  text-shadow: 1px 1px black;
+}
+
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+#menubutton {
+  margin-left: 10px;
+  margin-top: 10px;
+
+height: 20px;
+
+}
+
+#audioplayer {
+  background-color: #0066ff;
+  color: #051545;
+  border-radius: 4px;
+  border: 1.5px #051545;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 9%;
+  margin-right: 9%;
+  text-align: center;
+  width: 80%;
+  font-family: inherit;
+  box-shadow: 1px 1px;
+}
+#audioplayer:hover {
+  background-color: #055ee3;
+}
+footer {
+  color: #0066ff;
+  padding-top: 0.5px;
+  padding-bottom: 0.5px;
+  text-align: center;
+border-top: 1px #0066ff dotted;
+}
+#wardrobefoot {
+  margin: 0;
+  position: relative;
+  top: 600px;
+  width: 100%;
+  right: -37px;
+}
+.pagetop {
+  display: flex;
+flex-direction: row-reverse;
+}
+#abtme {
+  text-align: center;
+  color: #00FF2F;
+  text-shadow: 1px 1px #051545;
+}
+.aboutpage {
+  border-radius: 10px;
+  padding: 5px;
+  text-align: left;
+  font-size: 12px;
+  width: 95%;
+  margin: auto;
+  color: #051545;
+  margin-bottom: 10px;
+  background: #0066ff;
+  box-shadow: 2px 2px;
+}
+.aboutgallery {
+  border-radius: 10px;
+  padding: 2px;
+  margin-right: 7px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  text-align: center;
+  width: 180px;
+  color: #051545;
+  background: rgba(0, 135, 232, 0.8);
+  box-shadow: 2px 2px;
+  font-size: 12px;
+
+}
+.aboutwardrobe{
+  border-radius: 10px;
+  padding: 5px;
+  text-align: center;
+  width: 90%;
+  margin-left: 14%;
+  margin-right: 14%;
+  border: 2px indigo;
+  color: #051545;
+  position: relative;
+  top: 530px;
+  margin-bottom: 10px;
+  background: rgba(0, 135, 232, 0.8);
+    box-shadow: 2px 2px;
+}
+.title {
+  padding: 5px;
+  text-align: center;
+  margin: auto;
+}
+.secretbutton {
+  color: #0066ff;
+  margin-left: 90%;
+  top: 510px; /* because the wardrobe page uses a lot of elements with position: absolute, the posititon of all the other elements needs to be specified so that they dont appear under the absolute elements */
+  position: relative;
+  text-align: center;
+  font-family: inherit;
+
+}
+.secretbuttonhidden {
+  display: none;
+}
+.passwordhidden {
+  display: none;
+}
+#speechbuttonhidden {
+  display: none;
+}
+
+.passwordshown {
+  color: #0066ff;
+  margin-left: 30%;
+  margin-right: 30%;
+  top: 510px;
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  font-family: inherit;
+}
+.buttons {
+  font-size: 20px;
+  color: #0066ff;
+  text-align: center;
+padding-left: 10%;
+padding-right: 10%;
+  display: flex;
+  flex-direction: column;
+  text-shadow: 1px 1px black;
+}
+.button2 {
+font-family: inherit;
+  color: #0066ff;
+  text-align: center;
+background-color: #051545;
+}
+.passwordinput {
+  font-family: inherit;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+#dressup {
+  font-size: 25px;
+  border-radius: 8px;
+  border: 2px #051545 solid;
+    font-family: inherit;
+    background-color: #0066ff;
+    color: #00FF2F;
+  padding-top: 6%;
+  padding-bottom: 6%;
+  margin: 20px;
+}
+
+#container{
+  border-radius: 12px;
+    position: absolute;
+    margin-left: 20px;
+  width: 250px;
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(0, 255, 47, 1);
+  border: 2px #051545 solid;
+  z-index: -10;
+
+
+}
+
+#doll {
+  position: absolute;
+  background-image: url("../image/doll.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+  z-index: -3;
+} /*this is the doll for the dress up game. like the other elements used in this game, a z-index has been added to enssure it shows up behind and in front of the correct elements */
+
+#detaildoll {
+  position: absolute;
+  background-image: url("../image/detaildoll.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+  z-index: -3;
+}
+#hair {
+  position: absolute;
+  width: 250px;
+  height: 500px;
+}
+#extra {
+  position: absolute;
+  width: 250px;
+  height: 500px;
+}
+#top {
+  position: absolute;
+  width: 250px;
+  height: 500px;
+}
+#bottom {
+  position: absolute;
+  width: 250px;
+  height: 500px;
+  z-index: -1;
+}
+#shoes {
+  position: absolute;
+  width: 250px;
+  height: 500px;
+  z-index: -2;
+}
+.extra1 { /* all of these classes are for the placeholder elements of the dressup game */
+  position: absolute;
+  background-image: url("../image/speech1.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+}
+.extra2 {
+  position: absolute;
+  background-image: url("../image/speech2.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+}
+.extra3 {
+  position: absolute;
+  background-image: url("../image/speech3.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+}
+.extra4 {
+  position: absolute;
+  background-image: url("../image/speech4.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+}
+.extra5 {
+  position: absolute;
+  background-image: url("../image/speech5.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+}
+.extra6 {
+  position: absolute;
+  background-image: url("../image/speech6.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+}
+.extra7 {
+  position: absolute;
+  background-image: url("../image/speech7.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+}
+.hair1 {
+  position: absolute;
+  background-image: url("../image/hair1.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+}
+.hair2 {
+  position: absolute;
+  background-image: url("../image/hair2.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+}
+.hair3 {
+  position: absolute;
+  background-image: url("../image/hair3.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+}
+.hair4 {
+  position: absolute;
+  background-image: url("../image/hair4.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+}
+.hair5 {
+  position: absolute;
+  background-image: url("../image/hair5.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+}
+.hair6 {
+  position: absolute;
+  background-image: url("../image/hair6.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+}
+.top1 {
+  position: absolute;
+  background-image: url("../image/top1.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+}
+.top2 {
+  position: absolute;
+  background-image: url("../image/top2.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+}
+.top3 {
+  position: absolute;
+  background-image: url("../image/top3.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+}
+.top4 {
+  position: absolute;
+  background-image: url("../image/top4.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+}
+.top5 {
+  position: absolute;
+  background-image: url("../image/top5.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+}
+.top6 {
+  position: absolute;
+  background-image: url("../image/top6.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+}
+.bottom1 {
+  position: absolute;
+  background-image: url("../image/bottom1.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+}
+.bottom2 {
+  position: absolute;
+  background-image: url("../image/bottom2.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+}.bottom3 {
+  position: absolute;
+  background-image: url("../image/bottom3.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+}.bottom4 {
+  position: absolute;
+  background-image: url("../image/bottom4.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+}
+.bottom5 {
+  position: absolute;
+  background-image: url("../image/bottom5.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+}
+.bottom6 {
+  position: absolute;
+  background-image: url("../image/bottom6.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+}
+.shoes1 {
+  position: absolute;
+  background-image: url("../image/shoes1.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+}
+.shoes2 {
+  position: absolute;
+  background-image: url("../image/shoes2.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+}.shoes3 {
+  position: absolute;
+  background-image: url("../image/shoes3.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+}.shoes4 {
+  position: absolute;
+  background-image: url("../image/shoes4.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+}
+.shoes6 {
+  position: absolute;
+  background-image: url("../image/shoes6.png");
+  background-size: contain;
+  width: 250px;
+  height: 500px;
+}
+.playing {
+  text-align: center;
+  color: #00FF2F;
+  text-shadow: 2px 2px #051545;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 30px;
+  margin-right: 10px;
+}
+.record {
+  background-color: white;
+  border-radius: 12px;
+  border: 2px #051545;
+  padding: 10px;
+margin: 10px;
+}

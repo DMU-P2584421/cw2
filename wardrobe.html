@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <meta name="description" content="dizzytoad wardrobe page">
+    <meta charset="utf-8">
+    <title>wardrobe</title>
+  </head>
+  <body>
+      <div class="pagetop">
+        <div class="title" id="wardrobetitle">
+          <img style='max-width: 100%' src="image/wardrobe.png" alt="title reading wardrobe">
+          </div>
+      <div id="sidepanel" class="sidepanel">
+    <a href="javascript:void(0)" class="closebtn" aria-label="button to close menu sidepanel" onclick="closeNav()">x</a> <!-- button for when the sidepanel is open to close it -->
+  <a href="homepage.html"><strong>home</strong></a>
+    <a href="music.html"><strong>music</strong></a>
+    <a href="gallery.html"><strong>gallery</strong></a>
+    <a href="wardrobe.html"><strong>wardrobe</strong></a>
+    <a href="contact.html"><strong>contact me</strong></a>
+  </div>
+  <!-- aria-label has been used a lot throughout the code for accessability purposes-->
+   <img id="menubutton" src="image/menu.png" aria-label="button to open menu sidepanel" onclick="openNav()" width="20px" height="20px" alt="menu button"><!-- image acting as button to open the side panel -->
+  </div>
+      <div id="container">
+
+
+        <img id="clearimg" src="image/clear.png" alt="">
+ <div id="hair"></div>
+ <div id="extra"></div>
+ <div id="top"> </div>
+ <div id="bottom"> </div>
+ <div id="shoes"></div>
+  <div id="doll"></div>
+<!-- these are placeholders for the dress up elements-->
+
+  <div class="buttons" id="wardrobebuttons">
+    <h3>click to change</h3>
+    <input id="speechbuttonhidden" type="button" value="extra" id="nextextra" onclick="nextextra()"> <!-- these buttons have an onclick in them which means that when they are clicked they will perform the function inside-->
+       <input id="dressup" type="button" value="hair" id="nexthair" onclick="nexthair()">
+       <input id="dressup" type="button" value="top" id="nexttop" onclick="nexttop()">
+       <input id="dressup" type="button" value="bottom" id="nextbottom" onclick="nextbottom()">
+   <input id="dressup" type="button" value="shoes" id="nextshoe" onclick="nextshoe()">
+   </div>
+ </div>
+ <div class="secretbutton">
+   <input type="button" name="secret button" value="?" onclick="secretbutton()" class="button2" id="secretbutton">
+ </div>
+ <div class="passwordhidden" id="password">
+ <input type="text" name="password" id="passwordbox" class="passwordinput" placeholder="enter password">
+  <label for="password" aria-label="enter password"></label> <!-- adds a label to the prompt box for accesability purposes-->
+  <input type="submit" onclick="passwordfunction()" class="button2" value="confirm">
+</div>
+ <div class="aboutwardrobe" id="wardrobeabout">
+   <h3>welcome to my wardrobe!</h3>
+   <p> this little dress up game consists of some of my favourite outfits that i own in real life. i hope you have fun playing about with them! P.S. you might notice that you can input a password. you can find the password on one of the other pages of the site ;) i wonder what it will unlock?!?!?!</p>
+ </div>
+ <footer id="wardrobefoot"><p>P2584421</p></footer>
+
+ <script type="text/javascript">
+ function openNav() {
+document.getElementById("sidepanel").style.width = "250px";
+}
+// this function above is the one that runs when the menu button is pressed, it will increase the width of the sidepanel from 0 to 250px to make it seem as if the panel is opening //
+function closeNav() {
+document.getElementById("sidepanel").style.width = "0";
+}
+   window.onload=init;
+
+function init()
+{
+  ;
+    state.h=1;
+    state.t=1;
+    state.b=1;
+    state.s=1;
+    state.e=1;
+}
+// these are setting the values of the variables the code will use to track which item of clothing etc. is on, so it will know which to change it to //
+var state = {
+    h : 0,
+    t:0,
+    b:0,
+    s:0,
+    e:0
+};
+
+function passwordfunction() {
+    var input = document.getElementById("passwordbox").value;
+    if (input == 13579){
+      var speech=document.getElementById('speechbuttonhidden');
+      speech.setAttribute("id","dressup");
+    }
+    else {
+      document.getElementById('passwordbox').value = "";
+      var placeholder=document.getElementById('passwordbox');
+      placeholder.setAttribute("placeholder","try again");
+    }
+  } // this function is a password to unlock another option for customisation. if the correct password is in the box when submit is pressed, the class of the new feature is changed from one that is display none, to the same as the rest of the buttons. //
+function secretbutton()
+{
+
+    var passwordenter=document.getElementById("password");
+    passwordenter.setAttribute("class","passwordshown");
+    var secretbutton=document.getElementById('secretbutton');
+    secretbutton.setAttribute("class","secretbuttonhidden");
+  } //this function is when clicking the question mark button, it will hide the button and bring up the input interface //
+
+    function nextextra()
+    {
+
+        var extra=document.getElementById("extra");
+        if(state.e===0){
+        extra.setAttribute("class","none");
+            state.e++;
+
+        }
+        else
+         if(state.e===1){
+        extra.setAttribute("class","extra1");
+             state.e++;
+
+        }
+        else
+         if(state.e===2){
+        extra.setAttribute("class","extra2");
+             state.e++;
+        }
+        else
+         if(state.e===3){
+        extra.setAttribute("class","extra3");
+             state.e++;
+        }
+        else
+         if(state.e===4){
+        extra.setAttribute("class","extra4");
+        state.e++;
+    }
+    else
+    if(state.e===5){
+    extra.setAttribute("class","extra5");
+        state.e++;
+    }
+    else
+    if(state.e===6){
+    extra.setAttribute("class","extra6");
+        state.e++;
+    }
+    else
+    if(state.e===7){
+    extra.setAttribute("class","extra7");
+        state.e=0;
+    }
+  } //each click of the button changes the item to the next item, using the tracking variables set earlier. it does this by switching the class of the placeholder elements to change the background image. this is the same for all of the options. //
+nexthair();
+function nexthair()
+{
+
+    var hair=document.getElementById("hair");
+    if(state.h===0){
+    hair.setAttribute("class","none");
+        state.h++;
+
+    }
+    else
+     if(state.h===1){
+    hair.setAttribute("class","hair1");
+         state.h++;
+
+    }
+    else
+     if(state.h===2){
+    hair.setAttribute("class","hair2");
+         state.h++;
+    }
+    else
+     if(state.h===3){
+    hair.setAttribute("class","hair3");
+         state.h++;
+    }
+    else
+     if(state.h===4){
+    hair.setAttribute("class","hair4");
+         state.h++;
+    }
+    else
+     if(state.h===5){
+    hair.setAttribute("class","hair5");
+         state.h++;
+    }
+    else
+     if(state.h===6){
+    hair.setAttribute("class","hair6");
+         state.h=0;
+    }
+}
+function nexttop()
+{
+
+    var top=document.getElementById("top");
+    if(state.t===0){
+    top.setAttribute("class","none");
+        state.t++;
+
+    }
+    else
+     if(state.t===1){
+    top.setAttribute("class","top1");
+         state.t++;
+
+    }
+    else
+     if(state.t===2){
+    top.setAttribute("class","top2");
+         state.t++;
+    }
+    else
+     if(state.t===3){
+    top.setAttribute("class","top3");
+         state.t++;
+    }
+    else
+     if(state.t===4){
+    top.setAttribute("class","top4");
+    state.t++;
+}
+else
+if(state.t===5){
+top.setAttribute("class","top5");
+    state.t++;
+}
+else
+if(state.t===6){
+top.setAttribute("class","top6");
+    state.t=0;
+}
+}
+function nextbottom()
+{
+
+    var bottom=document.getElementById("bottom");
+    if(state.b===0){
+    bottom.setAttribute("class","none");
+        state.b++;
+
+    }
+    else
+     if(state.b===1){
+    bottom.setAttribute("class","bottom1");
+         state.b++;
+
+    }
+    else
+     if(state.b===2){
+    bottom.setAttribute("class","bottom2");
+         state.b++;
+    }
+    else
+     if(state.b===3){
+    bottom.setAttribute("class","bottom3");
+         state.b++;
+    }
+    else
+     if(state.b===4){
+    bottom.setAttribute("class","bottom4");
+    state.b++;
+}
+else
+if(state.b===5){
+bottom.setAttribute("class","bottom5");
+    state.b++;
+}
+else
+if(state.b===6){
+bottom.setAttribute("class","bottom6");
+    state.b=0;
+}
+}
+function nextshoe()
+{
+
+    var shoes=document.getElementById("shoes");
+    if(state.s===0){
+    shoes.setAttribute("class","none");
+        state.s++;
+
+    }
+    else
+     if(state.s===1){
+    shoes.setAttribute("class","shoes1");
+         state.s++;
+
+    }
+    else
+     if(state.s===2){
+    shoes.setAttribute("class","shoes2");
+         state.s++;
+    }
+    else
+     if(state.s===3){
+    shoes.setAttribute("class","shoes3");
+         state.s++;
+    }
+    else
+     if(state.s===4){
+    shoes.setAttribute("class","shoes4");
+    state.s++;
+}
+
+else
+if(state.s===5){
+shoes.setAttribute("class","shoes6");
+    state.s=0;
+}
+}
+ </script>
+  </body>
+</html>

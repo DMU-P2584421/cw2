@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <meta name="description" content="dizzytoad homepage">
+    <meta charset="utf-8">
+    <title>home</title>
+  </head>
+  <body>
+    <div class="pagetop">
+
+  <div class="title">
+    <img style='max-width: 100%' src="image/dizzytoad.png" alt="main title reading dizzytoad">
+  </div>
+  <div id="sidepanel" class="sidepanel">
+<a href="javascript:void(0)" class="closebtn" aria-label="button to close menu sidepanel" onclick="closeNav()">x</a> <!-- button for when the sidepanel is open to close it -->
+<a href="homepage.html"><strong>home</strong></a>
+<a href="music.html"><strong>music</strong></a>
+<a href="gallery.html"><strong>gallery</strong></a>
+<a href="wardrobe.html"><strong>wardrobe</strong></a>
+<a href="contact.html"><strong>contact me</strong></a>
+</div>
+<!-- aria-label has been used a lot throughout the code for accessability purposes-->
+<img id="menubutton" style="opacity: 80%" src="image/menu.png" aria-label="button to open menu sidepanel" onclick="openNav()" width="20px" height="20px" alt="menu button"><!-- image acting as button to open the side panel -->
+</div>
+
+</div>
+<div class="homedesktoprow">
+<div>
+
+<h1 id="abtme">ABOUT ME</h1>
+<div class="aboutrow">
+
+<div class="aboutpage">
+
+  <p>hi !! my name is ash and I made this website :) I'm currently in my second year of uni, studying media production. fun facts about me: my favourite colour is green, I love illustration and animation, and my star sign is leo :D </p>
+</div>
+<img id="abtdrawing" src="image/me.png" width="50%" height="80%" style="max-width: 100%" alt="drawing of ash, page creator">
+
+</div>
+
+</div>
+<div class="pagelinks">
+<h2 id="wdywtg" >where do you want to go?</h2>
+
+  <div class="linkscolumn">
+  <div class="linksrow">
+
+<a id="wardrobelink" class="linkword" href="wardrobe.html">wardrobe</a>
+<div class="linksinnercolumn">
+
+<a id="musiclink" class="linkword" href="music.html">music</a>
+<a id="contactlink" class="linkword" href="contact.html">contact</a>
+
+</div>
+</div>
+<a id="gallerylink" class="linkword" href="gallery.html">art gallery</a>
+<!-- these are links to the other pages, they are in divs so they can be arranged -->
+</div>
+</div>
+
+</div>
+<footer><p>P2584421</p></footer>
+<script type="text/javascript">
+function openNav() {
+document.getElementById("sidepanel").style.width = "250px";
+}
+// this function above is the one that runs when the menu button is pressed, it will increase the width of the sidepanel from 0 to 250px to make it seem as if the panel is opening //
+function closeNav() {
+document.getElementById("sidepanel").style.width = "0";
+}
+
+</script>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <meta name="description" content="dizzytoad contact page">
+    <meta charset="utf-8">
+    <title>contact me</title>
+  </head>
+  <body>
+    <div class="pagetop">
+    <div class="title">
+      <img style='max-width: 100%' src="image/contact.png" alt="main title reading contact me">
+    </div>
+    <div id="sidepanel" class="sidepanel">
+    <a href="javascript:void(0)" class="closebtn" aria-label="button to close menu sidepanel" onclick="closeNav()">x</a> <!-- button for when the sidepanel is open to close it -->
+    <a href="homepage.html"><strong>home</strong></a>
+    <a href="music.html"><strong>music</strong></a>
+    <a href="gallery.html"><strong>gallery</strong></a>
+    <a href="wardrobe.html"><strong>wardrobe</strong></a>
+    <a href="contact.html"><strong>contact me</strong></a>
+    </div>
+    <!-- aria-label has been used a lot throughout the code for accessability purposes-->
+    <img id="menubutton" src="image/menu.png" aria-label="button to open menu sidepanel" onclick="openNav()" width="20px" height="20px" alt="menu button"><!-- image acting as button to open the side panel -->
+    </div>
+
+      <div class="contactrow">
+      <a  id="contactbutton" href="https://www.instagram.com/dizzytoad/"><img width="150px" style='max-width: 100%' src="image/instagram.png" alt="instagram logo"></a>
+      <a  id="contactbutton" href="https://www.tiktok.com/@dizzytoad?lang=en"><img width="150px" style='max-width: 100%' src="image/tiktok.png" alt="tiktok logo"></a>
+
+    </div>
+    <div class="contactrow">
+      <a id="contactbutton" href="https://twitter.com/dizzytoad"><img width="150px" style='max-width: 100%' src="image/twitter.png" alt="twitter logo"></a>
+      <a id="contactbutton" href="https://open.spotify.com/user/b9pf1dp627kmmjqclgg38ih43?si=8aed80f83bd043c2"><img width="150px" style='max-width: 100%' src="image/spotify.png" alt="spotify logo"></a>
+
+    </div>
+
+  <form id="contactform" class="contactform">
+
+    <label class="formtext" for="name">name</label>
+    <input class="forminput" type="text" id="name" name="name" placeholder="your name..">
+
+    <label class="formtext" for="email">email</label>
+    <input class="forminput" type="text" id="email" name="email" placeholder="your email..">
+
+    <label class="formtext" for="subject">message</label>
+    <textarea class="forminput" id="subject" name="subject" placeholder="write something.." style="height:200px"></textarea>
+
+    <button id="submitbutton" type="button" onclick="addusermessage()">submit</button>
+
+  </form>
+  <p class="formtext" id="thanks"></p>
+
+<script src="//cdn.jsdelivr.net/npm/pouchdb@7.3.0/dist/pouchdb.min.js"></script> <!-- this is an attempt at using a pouch db database im not sure if it worked -->
+
+    <footer><p>P2584421</p></footer>
+    <script type="text/javascript">
+      function openNav() {
+      document.getElementById("sidepanel").style.width = "250px";
+      }
+      // this function above is the one that runs when the menu button is pressed, it will increase the width of the sidepanel from 0 to 250px to make it seem as if the panel is opening //
+      function closeNav() {
+      document.getElementById("sidepanel").style.width = "0";
+      }
+
+      let db = new PouchDB("my_database");
+
+  function addusermessage() {
+    thankyou();
+        let message = {
+          _id: new Date().toISOString(),
+          name: document.getElementById("name").value,
+          email: document.getElementById("email").value,
+          message: document.getElementById("message").value
+        };
+
+        db.put(message);
+      }
+// what this function is supposed to do is retrieve the input from the form and add it to the database //
+      function thankyou() {
+      var contactform = document.getElementById("contactform");
+      contactform.setAttribute("class", "contactformhidden");
+        document.getElementById("thanks").innerHTML= "Thank you for contacting me :)";
+      } // this function is just to stop displaying the form and instead display the thank you message //
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <meta name="description" content="dizzytoad music page">
+    <meta charset="utf-8">
+    <title>music</title>
+  </head>
+  <body id="musicbody">
+    <div class="pagetop">
+
+    <div class="title">
+      <img style='max-width: 100%' src="image/music.png" alt="title reading music">
+    </div>
+    <div id="sidepanel" class="sidepanel">
+  <a href="javascript:void(0)" class="closebtn" aria-label="button to close menu sidepanel" onclick="closeNav()">x</a> <!-- button for when the sidepanel is open to close it -->
+<a href="homepage.html"><strong>home</strong></a>
+  <a href="music.html"><strong>music</strong></a>
+  <a href="gallery.html"><strong>gallery</strong></a>
+  <a href="wardrobe.html"><strong>wardrobe</strong></a>
+  <a href="contact.html"><strong>contact me</strong></a>
+</div>
+<!-- aria-label has been used a lot throughout the code for accessability purposes-->
+ <img id="menubutton" src="image/menu.png" aria-label="button to open menu sidepanel" onclick="openNav()" width="20px" height="20px" alt="menu button"><!-- image acting as button to open the side panel -->
+</div>
+
+    <div class="musicdesktopadapt">
+
+    <div class="row">
+      <div class="playing">
+      <h3>now playing:</h3>
+      <h4 id="songname">nothing</h4>
+    </div>
+    <div class="record">
+      <img height="100px" id="record" onclick="change()" src="image/recordoff.png" alt="drawing of an off record player">
+    </div>
+    </div>
+    <div>
+    <h5>!! please pause music before attempting to play another song !!</h5>
+    <input id="audioplayer"type="button" name="play just" value="just - radiohead" onclick="just()">
+    <audio id="just" display="none" onplaying="changejust()" onpause="changejust()">
+      <source src="audio/just.mp3" type="audio/mp3">
+    </audio>
+    <input id="audioplayer"type="button" name="play hooded hawks" value="hooded hawks - mook" onclick="hooded()">
+    <audio id="hooded" display="none" onplaying="changehooded()" onpause="changehooded()">
+      <source src="audio/hoodedhawks.mp3" type="audio/mp3">
+    </audio>
+    <input id="audioplayer"type="button" name="play lochness" value="lochness - julie" onclick="loch()">
+    <audio id="loch" display="none" onplaying="changeloch()" onpause="changeloch()">
+      <source src="audio/lochness.mp3" type="audio/mp3">
+    </audio>
+    <input id="audioplayer"type="button" name="play whitemagic" value="white magic - miniature tigers" onclick="wm()">
+    <audio id="wm" display="none" onplaying="changewm()" onpause="changewm()">
+      <source src="audio/whitemagic.mp3" type="audio/mp3">
+    </audio>
+    <input id="audioplayer"type="button" name="play ik" value="i know the end - phoebe bridgers" onclick="ik()">
+    <audio id="ik" display="none" onplaying="changeik()" onpause="changeik()">
+      <source src="audio/iknowtheend.mp3" type="audio/mp3">
+    </audio>
+
+  </div>
+  <div class="aboutpage" style="margin-top: 15px; text-align: center">
+    <h3>welcome to the music page !!</h3>
+    <p> these are some of my favourite songs right now, let me talk you through them :)</p>
+    <p>just is a song by radiohead, an english rockband that was formed in the 80s. not much more to say about it, it's just a song I've been enjoying lately.</p>
+    <p>hooded hawks is by a band called mook, which was fronted by american actor paul dano. i like this song because it is different to other songs i normally listen to, and is really interesting and experimental. </p>
+    <p>lochness is a great song by julie, who combine art rock and grunge to make a brilliant sound.</p>
+    <p>miniature tigers is my favourite band of all time and my number one listened to artist on spotify of all time. this song by them, white magic, is the first song i ever properly listened to by them, in 2018.</p>
+    <p>phobe bridgers is an american singer-songwriter. she specialises in sadly beautiful songs. this song, i know the end, is one that i have been listening to a lot lately.</p>
+  </div>
+  </div>
+    <footer><p>P2584421</p></footer>
+    <script type="text/javascript">
+    function openNav() {
+  document.getElementById("sidepanel").style.width = "250px";
+}
+// this function above is the one that runs when the menu button is pressed, it will increase the width of the sidepanel from 0 to 250px to make it seem as if the panel is opening //
+function closeNav() {
+  document.getElementById("sidepanel").style.width = "0";
+}
+    var record_tracker = '1';
+    var name_tracker = '1';
+    function change() {
+      var image = document.getElementById('record');
+      if(name_tracker=='2' || name_tracker=='6' || name_tracker=='3' || name_tracker=='4' || name_tracker=='5'){
+      image.src='image/recordoff.png';
+      var sounds = document.getElementsByTagName('audio');
+  for(i=0; i<sounds.length; i++) sounds[i].pause();
+  just_tracker='1'
+  hooded_tracker='1'
+  ik_tracker='1'
+  loch_tracker='1'
+  just_tracker='1'
+      }
+      }
+ function changejust(){
+   if (name_tracker=='1' || name_tracker=='6' || name_tracker=='3' || name_tracker=='4' || name_tracker=='5') {
+     document.getElementById("songname").innerHTML = "just";
+     name_tracker='2';
+   }
+   else {
+     document.getElementById("songname").innerHTML = "nothing";
+     name_tracker='1';
+   } // this function changes the song name on the now playing section. the if clause has been used in this case to make sure that it only changes the name if the song is able to begin playing, ie. if none of the other songs are playing already. //
+
+ var image = document.getElementById('record');
+ if(record_tracker=='1'){
+ image.src='image/recordon.gif';
+ record_tracker='2';
+ }
+ else{
+ image.src='image/recordoff.png';
+ record_tracker='1';
+ }
+ }
+ var just_tracker = '1';
+ function just(){
+   var just = document.getElementById('just')
+   if (just_tracker=='1' && name_tracker=='1'){
+     just.play()
+     just_tracker='2'
+   }
+   else {
+     just.pause()
+     just_tracker='1'
+   }//this function is to begin playing the audio when the button of the song is pressed. if the audio is already playing when pressed it will pause the audio and change the playing name back to nothing //
+ }
+ function changehooded(){
+   if (name_tracker=='1' || name_tracker=='2' || name_tracker=='6' || name_tracker=='4' || name_tracker=='5') {
+     document.getElementById("songname").innerHTML = "hooded hawks";
+     name_tracker='3';
+   }
+   else {
+     document.getElementById("songname").innerHTML = "nothing";
+     name_tracker='1';
+   }
+
+ var image = document.getElementById('record');
+ if(record_tracker=='1'){
+ image.src='image/recordon.gif';
+ record_tracker='2';
+ }
+ else{
+ image.src='image/recordoff.png';
+ record_tracker='1';
+ }
+ }
+ var hooded_tracker = '1';
+ function hooded(){
+   var hooded = document.getElementById('hooded')
+   if (hooded_tracker=='1' && name_tracker=='1'){
+     hooded.play()
+     hooded_tracker='2'
+   }
+   else {
+     hooded.pause()
+     hooded_tracker='1'
+   }
+ }
+ function changeloch(){
+   if (name_tracker=='1' || name_tracker=='2' || name_tracker=='3' || name_tracker=='6' || name_tracker=='5') {
+     document.getElementById("songname").innerHTML = "lochness";
+     name_tracker='4';
+   }
+   else {
+     document.getElementById("songname").innerHTML = "nothing";
+     name_tracker='1';
+   }
+
+ var image = document.getElementById('record');
+ if(record_tracker=='1'){
+ image.src='image/recordon.gif';
+ record_tracker='2';
+ }
+ else{
+ image.src='image/recordoff.png';
+ record_tracker='1';
+ }
+ }
+ var loch_tracker = '1';
+ function loch(){
+   var loch = document.getElementById('loch')
+   if (loch_tracker=='1' && name_tracker=='1'){
+     loch.play()
+     loch_tracker='2'
+   }
+   else {
+     loch.pause()
+     loch_tracker='1'
+   }
+ }
+ function changewm(){
+   if (name_tracker=='1' || name_tracker=='2' || name_tracker=='3' || name_tracker=='4' || name_tracker=='6') {
+     document.getElementById("songname").innerHTML = "white magic";
+     name_tracker='5';
+   }
+   else {
+     document.getElementById("songname").innerHTML = "nothing";
+     name_tracker='1';
+   }
+
+ var image = document.getElementById('record');
+ if(record_tracker=='1'){
+ image.src='image/recordon.gif';
+ record_tracker='2';
+ }
+ else{
+ image.src='image/recordoff.png';
+ record_tracker='1';
+ }
+ }
+ var wm_tracker = '1';
+ function wm(){
+   var wm = document.getElementById('wm')
+   if (wm_tracker=='1' && name_tracker=='1'){
+     wm.play()
+     wm_tracker='2'
+   }
+   else {
+     wm.pause()
+     wm_tracker='1'
+   }
+ }
+ function changeik(){
+   if (name_tracker=='1' || name_tracker=='2' || name_tracker=='3' || name_tracker=='4' || name_tracker=='5') {
+     document.getElementById("songname").innerHTML = "i know the end";
+     name_tracker='6';
+   }
+   else {
+     document.getElementById("songname").innerHTML = "nothing";
+     name_tracker='1';
+   }
+
+ var image = document.getElementById('record');
+ if(record_tracker=='1'){
+ image.src='image/recordon.gif';
+ record_tracker='2';
+ }
+ else{
+ image.src='image/recordoff.png';
+ record_tracker='1';
+ }
+ }
+ var ik_tracker = '1';
+ function ik(){
+   var ik = document.getElementById('ik')
+   if (ik_tracker=='1' && name_tracker=='1'){
+     ik.play()
+     ik_tracker='2'
+   }
+   else {
+     ik.pause()
+     ik_tracker='1'
+   }
+ }
+    </script>
+  </body>
+</html>
